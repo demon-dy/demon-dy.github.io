@@ -5,7 +5,7 @@ header-img: img/home-bg.jpg
 email: demonduyu@163.com
 description: "关于软件开发 | 杜宇，Web & Java & Vue | 这里是 @IDemon杜宇 的个人博客"
 keyword: "杜宇, IDemon杜宇, 博客, 个人网站, 互联网, Web, Java , JavaScript, 前端, 后端"
-#url: "http://www.idemon.top"              # your host, for absolute URL
+url: "http://blog.idemon.top"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
