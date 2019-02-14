@@ -1,11 +1,11 @@
 # Site settings
-title: Hux Blog
-SEOTitle: 黄玄的博客 | Hux Blog
+title: IDemon Blog
+SEOTitle: 杜宇的博客 | IDemon Blog
 header-img: img/home-bg.jpg
-email: huxpro@gmail.com
-description: "关于程序与设计、黑客与画家 | 黄玄，Web & Mobile Lover，Software Engineer，UX Designer | 这里是 @Hux黄玄 的个人博客，与你一起发现更大的世界。"
-keyword: "黄玄, Hux黄玄, Hux, 鬼栈, huxpro, @huxpro, 黄玄的博客, Hux Blog, 博客, 个人网站, 互联网, Web, JavaScript, 前端, 设计"
-url: "https://huangxuan.me"              # your host, for absolute URL
+email: demonduyu@163.com
+description: "关于软件开发 | 杜宇，Web & Java & Vue | 这里是 @IDemon杜宇 的个人博客"
+keyword: "杜宇, IDemon杜宇, 博客, 个人网站, 互联网, Web, Java , JavaScript, 前端, 后端"
+#url: "http://www.idemon.top"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
@@ -13,10 +13,10 @@ future: true
 
 # SNS settings
 RSS: false
-weibo_username:     huxpro
-zhihu_username:     huxpro
-github_username:    huxpro
-twitter_username:   huxpro
+weibo_username:     IDemon
+zhihu_username:     IDemon
+github_username:    demon-dy
+twitter_username:   IDemon
 #facebook_username:  huxpro
 #linkedin_username:  firstname-lastname-idxxxx
 
