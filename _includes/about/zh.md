@@ -8,12 +8,13 @@
 2. 熟练使用JavaScript、JQuery、Vue.js、HTML、CSS等前端开发语言。
 3. 熟练使用Spring的Ioc和Aop的开发。
 4. 熟练使用SpringMVC、Mybatis、SpringBoot、SpringData的开发。
-5. 熟练掌握mysql关系型数据库的操作。
-6. 掌握redis、mongodb、solr、Elasticsearch等菲关系型数据库的应用。
-7. 熟练掌握svn、git版本控制和maven的项目管理。
-8. 熟练掌握Photoshop图像处理和Premiere视频处理，了解AfterEffects视频特效处理和Audition音频处理。
-9. 熟悉23设计模式的应用。
-10. 了解SpringCloud项目开发。
+5. 熟练掌握linux服务器的基本操作以及项目部署。
+6. 熟练掌握mysql关系型数据库的操作。
+7. 掌握redis、mongodb、solr、Elasticsearch等菲关系型数据库的应用。
+8. 熟练掌握svn、git版本控制和maven的项目管理。
+9. 熟练掌握Photoshop图像处理和Premiere视频处理，了解AfterEffects视频特效处理和Audition音频处理。
+10. 熟悉23设计模式的应用。
+11. 了解SpringCloud、dubbo、zookeeper分布式开发。
 
 #### 联系方式
 &ensp;&ensp;&ensp;&ensp;邮箱：**demonduyu@163.com**
