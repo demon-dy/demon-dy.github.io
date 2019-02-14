@@ -13,10 +13,10 @@ future: true
 
 # SNS settings
 RSS: false
-weibo_username:     IDemon
-zhihu_username:     IDemon
+weibo_username:     5651881664
+zhihu_username:     idemondu
 github_username:    demon-dy
-twitter_username:   IDemon
+#twitter_username:   IDemon
 #facebook_username:  huxpro
 #linkedin_username:  firstname-lastname-idxxxx
 
@@ -105,8 +105,7 @@ friends: [
     {
     #     title: "Su",
     #     href: "http://su.gallery/"
-    # },
-    {
+    # },{
         title: "乱序",
         href: "http://mida.re/"
     },{
