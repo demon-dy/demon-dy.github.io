@@ -31,34 +31,44 @@ tags:
 ```
     
 ## 三.创建版本库
-	
-	打开git  Bash  应用程序
-	在适当的位置上创建一个空目录来充当版本库
-	$ mkdir learngit
+打开git  Bash  应用程序
+在适当的位置上创建一个空目录来充当版本库
+```
+    $ mkdir learngit
     $ cd learngit
     $ pwd
          /Users/michael/learngit
-	在空目录下通过 git init 命令将这个目录变成管理库
+ ```
+在空目录下通过 git init 命令将这个目录变成管理库
+```
 	$ git init
         Initialized empty Git repository in /Users/michael/learngit/.git/
-	把文件添加到git仓库
-	将编写好的文件放到learngit中或者是其子文件中，要不然git是无法识别的。在通过
+```
+把文件添加到git仓库
+将编写好的文件放到learngit中或者是其子文件中，要不然git是无法识别的。在通过
+```
 	git add <file>   //命令来添加文件<file>是文件的名字，该命令可以执行多次
 	git commit -m "remark" // 通过commit命令进行提交，其中remark为提交的备注
-	提交之后再次修改文件，运行git status查看仓库当前的状态，再次添加（git add）修改的文件，并且提交（git commit）即可。
+```
+提交之后再次修改文件，运行git status查看仓库当前的状态，再次添加（git add）修改的文件，并且提交（git commit）即可。
+```
 	git status   //该命令可以查看仓库中哪些文件被修改了。
 	git diff      // 该命令是查看具体修改的部分  difference - 差异 
+```
 	
 ## 四. 版本回退
 	
-	在做版本回退的时候，可以使用git log 命令查看历史版本记录
+在做版本回退的时候，可以使用git log 命令查看历史版本记录
+```
 	git log  命令显示从最近到最远的提交日志    
 	git log --pretty=oneline 添加参数可以更直观的查看信息    显示结果为 版本id +备注信息
-	 使用git reset 命令进行版本的回滚
+```	
+使用git reset 命令进行版本的回滚
+```
 	git reset --hard HEAD^ 回滚到上一个版本，上上个是HEAD^^  更多的为HEAD~n
 	git reset --hard 版本id前几位 回滚到指定版本(commitId)
 	git reflog 该命令可以查看你所有历史版本id，即使回滚到之前了，还可以查看之前版本到当前版本之间的
-	
+```
 Git暂存区的概念：暂存区是Git独有的（svn没有），用户在工作区编写文件之后使用git add命令添加会将工作区的文件暂时放到暂存区中，当用户使用git commit命令提交之后，会将暂存区中的文件添加到新的节点上
 	
 git管理的是修改，而不是文件，当文件添加到暂存盘后再次修改，再提交，只会更新第一次添加的部分。
@@ -68,7 +78,8 @@ git管理的是修改，而不是文件，当文件添加到暂存盘后再次�
 			git checkout --filename  //可以将指定文件的修改部分撤销掉。  
 		2）当修改了最新版本库中的文件，并且add到了暂存盘中：
 			git reset HEAD <filename>  //可以将指定文件还原到最新版本库中的文件
-	删除文件操作：
+			
+删除文件操作：
 	
 		1）故意删除了工作区的文件，在删除完文件git status,会提示差异
 			git rm filename   使用git的删除后即可提交
@@ -96,39 +107,38 @@ git管理的是修改，而不是文件，当文件添加到暂存盘后再次�
 
 在git中主分支叫master,开始的时候只有一条分支，但是为了可以每天跟新代码，并且不破坏原有主程序的运行，会采用多分支的情况进行开发，子分支在没有和主分支合并的时候即使计较了也不会影响主分支。
 	
-    具体实操：
-    	1）创建分支dev
-    		$ git checkout -b dev //git checkout命令加上-b参数表示创建并切换 ,相当于：【git branch dev】【git checkout dev】
-    	2） 然后，用git branch命令查看当前分支：
-    		$ git branch
-    		* dev
-    		  master
-    	3）在dev分支上修改仓库里面的内容在提交，在使用
-    		git checkout master 命令切换至master分支
-    	4）是看不到dev分支上修改的内容的，接下来进行合并分支：
-    		git merge dev   进行合并dev分支
-    	5）合并成功后删除分支，删除后利用git branch 可以查看分支，只剩下master分支了
-    		git branch -d dev 删除dev分支
-    	查看分支：git branch
-    	创建分支：git branch <name>
-    	切换分支：git checkout <name>
-    	创建+切换分支：git checkout -b <name>
-    	合并某分支到当前分支：git merge <name>
-    	删除分支：git branch -d <name>
-    	当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。
-    	
-    	解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。
-    	
-    	用git log --graph命令可以看到分支合并图。
+具体实操：
+	1）创建分支dev
+		`$ git checkout -b dev `//git checkout命令加上-b参数表示创建并切换 ,相当于：【git branch dev】【git checkout dev】
+	2） 然后，用git branch命令查看当前分支：
+		`$ git branch`
+		* dev
+		  master
+	3）在dev分支上修改仓库里面的内容在提交，在使用
+		`git checkout master` 命令切换至master分支
+	4）是看不到dev分支上修改的内容的，接下来进行合并分支：
+		`git merge dev`   进行合并dev分支
+	5）合并成功后删除分支，删除后利用git branch 可以查看分支，只剩下master分支了
+		`git branch -d dev` 删除dev分支
+	查看分支：`git branch`
+	创建分支：`git branch <name>`
+	切换分支：`git checkout <name>`
+	创建+切换分支：`git checkout -b <name>`
+	合并某分支到当前分支：`git merge <name>`
+	删除分支：`git branch -d <name>`
+	当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。
 	
-####分支管理策略：  
+	解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。
+	
+	用git log --graph命令可以看到分支合并图。
+	
+###分支管理策略：  
 
 &nbsp;&nbsp;&nbsp;&nbsp;在合并分支的时候通常会使用快速合并，但是这样删除分支之后会丢失分支的信息，那么使用--no-ff的方式使用git merge进行合并时候不会使用快速和并的方式：   git merge --no-ff -m "更新的备注信息"
 	修复master分支上的bug时：
 	
 - 倘若当前dev分支还未开发完成，那么先在当前dev分支上进行存储操作：
-
-			git stash    会将当前分支存储起来
+			`git stash    会将当前分支存储起来`
 - 然后在需要修改的master分支上创建一个修复bug的分支，修复提交后利用--no-ff合并该分支
 
 		git merge --no-ff -m "merged bug fix 101" bug
