@@ -121,8 +121,9 @@ git管理的是修改，而不是文件，当文件添加到暂存盘后再次�
     	
     	用git log --graph命令可以看到分支合并图。
 	
-分支管理策略：  
-&nbsp;&nbsp;在合并分支的时候通常会使用快速合并，但是这样删除分支之后会丢失分支的信息，那么使用--no-ff的方式使用git merge进行合并时候不会使用快速和并的方式：   git merge --no-ff -m "更新的备注信息"
+####分支管理策略：  
+
+&nbsp;&nbsp;&nbsp;&nbsp;在合并分支的时候通常会使用快速合并，但是这样删除分支之后会丢失分支的信息，那么使用--no-ff的方式使用git merge进行合并时候不会使用快速和并的方式：   git merge --no-ff -m "更新的备注信息"
 	修复master分支上的bug时：
 	
 - 倘若当前dev分支还未开发完成，那么先在当前dev分支上进行存储操作：
@@ -131,7 +132,7 @@ git管理的是修改，而不是文件，当文件添加到暂存盘后再次�
 - 然后在需要修改的master分支上创建一个修复bug的分支，修复提交后利用--no-ff合并该分支
 
 		git merge --no-ff -m "merged bug fix 101" bug
-    	最后在回到dev分支（git checkout dev） ，进行恢复
+        最后在回到dev分支（git checkout dev） ，进行恢复
     		恢复方法：
     			1） git stash apply     恢复，但是恢复后，stash内容并不删除
     			2） git stash pop      回复后删除stash内容
@@ -140,12 +141,12 @@ git管理的是修改，而不是文件，当文件添加到暂存盘后再次�
 - 当你从远程仓库克隆时，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且，远程仓库的默认名称是origin
 
         要查看远程库的信息，用git remote：
-    	$ git remote
-            origin
+        	$ git remote
+                origin
     	或者，用git remote -v显示更详细的信息：
-    	$ git remote -v
-            origin  git@github.com:michaelliao/learngit.git (fetch)
-            origin  git@github.com:michaelliao/learngit.git (push)
+        	$ git remote -v
+                origin  git@github.com:michaelliao/learngit.git (fetch)
+                origin  git@github.com:michaelliao/learngit.git (push)
     	上面显示了可以抓取和推送的origin的地址。如果没有推送权限，就看不到push的地址。
 - 想要推送本地的一个分支
 
@@ -156,16 +157,19 @@ git管理的是修改，而不是文件，当文件添加到暂存盘后再次�
 		b. 如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；
 		c. 如果合并有冲突，则解决冲突，并在本地提交；
 		d. 没有冲突或者解决掉冲突后，再用git push origin <branch-name>推送就能成功！
-	如果git pull提示no tracking information，则说明本地分支和远程分支的链接关系没有创建，用命令git branch --set-upstream-to <branch-name> origin/<branch-name>
+	
+   如果git pull提示no tracking information，则说明本地分支和远程分支的链接关系没有创建，用命令git branch --set-upstream-to <branch-name> origin/<branch-name>
 		
 ## 七.标签管理
 
-    标签的作用，给重要的版本提供简易的识别，例如 xxx .v01
-    首先切换到需要打标签的分支：  git branch  (查看分支) git checkout <master> (切换分支)
+标签的作用，给重要的版本提供简易的识别，例如 xxx .v01
+首先切换到需要打标签的分支：  git branch  (查看分支) git checkout <master> (切换分支)
+   
     然后，敲命令git tag <name>就可以打一个新标签：
        git tag V1.0
     可以使用 git tag 命令查看所有的标签
-    默认标签是打在最新提交的commit上的。有时候，如果忘了打标签，比如，现在已经是周五了，但应该在周一打的标签没有打，怎么办？
+默认标签是打在最新提交的commit上的。有时候，如果忘了打标签，比如，现在已经是周五了，但应该在周一打的标签没有打，怎么办？
+
     方法是找到历史提交的commit id，然后打上就可以了：
        git log --pretty=oneline --abbrev-commit
     比方说要对某次提交打标签，它对应的commit id是f52c633，敲入命令：
@@ -187,6 +191,8 @@ git管理的是修改，而不是文件，当文件添加到暂存盘后再次�
 
 ## 九.git删除已经添加版本库但是还没有提交的不用文件
 
-    进入该文件的目录下，执行
+进入该文件的目录下，执行
+```git
     $ git rm -r --cached .idea              # 删除.idea文件夹
     $ git commit -m '删除.idea'        # 提交,添加操作说明
+```
