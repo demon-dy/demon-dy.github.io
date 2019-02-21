@@ -1,8 +1,18 @@
 ---
-date: 2019-02-21 11:22
-status: public
-title: 2019-02-21-gitInit-2019
+layout:     post
+title:      "vue快速上手"
+subtitle:   " \"Hello World, Hello Blog\""
+date:       2019-02-14 12:00:00
+author:     "idemon"
+header-img: "img/post-bg-alibaba.jpg"
+catalog: true
+tags:
+    - 技术
+    - Vue
 ---
+
+> “Yeah It's on. ”
+
 
 ##一. Git是分布式版本控制系统，集中式和分布式版本控制系统有什么区别？
    **集中式版本控制系统**：  版本库是集中放在中央服务器的，而开发过程是从中央服务器下载到本机在进行开发，如果想要更新代码，需要下载中央服务器最新的，在进行提交。局域网还好，如果是互联网下载会很慢。
@@ -152,3 +162,4 @@ title: 2019-02-21-gitInit-2019
     进入该文件的目录下，执行
     $ git rm -r --cached .idea              # 删除.idea文件夹
     $ git commit -m '删除.idea'        # 提交,添加操作说明
+
