@@ -7,37 +7,41 @@ author:     "idemon"
 header-img: "img/post-bg-alibaba.jpg"
 catalog: true
 tags:
-    - 技术
+    - 生活
     - 博客
 ---
 
-> “Yeah It's on. ”
+> “在学校和生活中，工作的最重要的动力是工作中的乐趣，是工作获得结果时的乐趣以及对这个结果的社会价值的认识。 —— 爱因斯坦 ”
 
 
 ## 前言
 
-Hux 的 Blog 就这么开通了。
+你好！我叫[杜宇](http://blog.idemon.top)，我是一个喜欢学习技术的人，只怪自己大学顿悟的太晚，大三才开始钻研学习技术方面的东西。从此之后我喜欢上了图书馆，喜欢上了读书。
 
 [跳过废话，直接看技术实现 ](#build) 
 
+但是知识用于分享，才能体现他的乐趣以及魅力，要是我写的博客哪块有不对的，欢迎联系我，咱们共同探讨。
+>**邮箱：** *demonduyu@163.com*
 
 
-2015 年，Hux 总算有个地方可以好好写点东西了。
+
+&nbsp;&nbsp;&nbsp;&nbsp;本人是软件工程专业，在大学的学编程的时候就对这方面十分热爱，再加上爱玩的天性，没事还会根舍友一起写个小游戏来玩，那段时间每天都是一两点睡觉，但是写出来在叫上同学一起玩的时候确实很有成就感。
 
 
-作为一个程序员， Blog 这种轮子要是挂在大众博客程序上就太没意思了。一是觉得大部分 Blog 服务都太丑，二是觉得不能随便定制不好玩。之前因为太懒没有折腾，结果就一直连个写 Blog 的地儿都没有。
 
-在玩了一段时间知乎之后，答题的快感又激起了我开博客的冲动。之前的[个人网站](http://huangxuan.me/portfolio)是作品集形式的（现在集成进来了），并不适合用来写博文，一不做二不休，花一天搞一个吧！
+&nbsp;&nbsp;&nbsp;&nbsp;后来又喜欢上了摄影，自学摄影知识，拍照片、拍视频、Photoshop图像处理、Premiere视频剪辑，以及adobe全家桶的音频，视频特效等技术。当技术掌握了后，我开始了我的摄影经历，创建过自己的工作室，拍过自己的微电影，也接过拍外景拍照的活（冬天出去拍微电影，雨天出去拍照片，经历很多不可思议的事情，但是这段经历还是很开心）
 
 
-<p id = "build"></p>
+
+
+
 ---
 
 ## 正文
+<p id = "build"></p>
+接下来说说搭建这个博客的技术细节，首先注明这个博客是[HUX](https://github.com/Huxpro/huxpro.github.io)个人Git发布的博客教程来搭建的，有兴趣的小伙伴也可以之间看[原版](https://github.com/Huxpro/huxpro.github.io)
 
-接下来说说搭建这个博客的技术细节。  
-
-正好之前就有关注过 [GitHub Pages](https://pages.github.com/) + [Jekyll](http://jekyllrb.com/) 快速 Building Blog 的技术方案，非常轻松时尚。
+>正好之前就有关注过 [GitHub Pages](https://pages.github.com/) + [Jekyll](http://jekyllrb.com/) 快速 Building Blog 的技术方案，非常轻松时尚。
 
 其优点非常明显：
 
@@ -47,37 +51,51 @@ Hux 的 Blog 就这么开通了。
 	* 如果需要自定义域名，也只需要简单改改 DNS 加个 CNAME 就好了 
 * Jekyll 的自定制非常容易，基本就是个模版引擎
 
+### Windows安装教程：
+1. 安装环境依赖
+Jekyll的环境依赖，安装[Ruby+Devkit](https://rubyinstaller.org/downloads/)（点击传送门直接传送到下载页面：[传送门](https://rubyinstaller.org/downloads/)）,我下载的是**Ruby+Devkit 2.5.3-1 (x64)** 官方推荐的版本，下载好了直接安装即可。
 
-本来觉得最大的缺点可能是 GitHub 在国内访问起来太慢，所以第二天一起床就到 GitCafe(Chinese GitHub Copy，现在被 Coding 收购了) 迁移了一个[镜像](http://huxpro.coding.me)出来，结果还是巨慢。
-
-哥哥可是个前端好嘛！ 果断开 Chrome DevTool 查了下网络请求，原来是 **pending 在了 Google Fonts** 上，页面渲染一直被阻塞到请求超时为止，难怪这么慢。  
-忍痛割爱，只好把 Web Fonts 去了（反正超时看到的也只能是 fallback ），果然一下就正常了，而且 GitHub 和 GitCafe 对比并没有感受到明显的速度差异，虽然 github 的 ping 值明显要高一些，达到了 300ms，于是用 DNSPOD 优化了一下速度。
-
-
+2. 安装Jekyll
+键盘[win+R] ，输入`cmd`回车，在命令行窗口输入：
+    `gem install jekyll`
+如果需要安装指定版本：
+    `gem install jekyll -v 3.1.6`
+检测是否安装成功：  -->若返回版本号，则安装成功
+    `jekyll -v`
+卸载命令(可以不用执行，如果安装失败了，卸载了从新试一下):
+    ` gem uninstall jekyll`
+3. 从git上Fork一个jekyll项目
+    1. 首先你需要有一个git账号，没有git账号的小伙伴可以[注册一个git账号](https://github.com/join?source=login)
+    2. 在本地安装git，这个网上教程很多，也可以查看[git快速上手](http://blog.idemon.top/2019/02/21/Git-Query-2019/)
+    3. 然后Fork一个git项目，我Fork的是[Hux]()的个人博客，如果你也喜欢，可以帮助他点一下【star】，git的地址：<a href="https://github.com/Huxpro/huxpro.github.io">https://github.com/Huxpro/huxpro.github.io</a>
+    4.将Fork在本地的项目进入页面，点击【settings】在其子选项【Options】页面中更改项目名称为：`[你的git名称].github.io` ，比如我的叫：`demon-dy.github.io`  
+    
+    5.然后在你的git bash窗口中输入：
+        进入你放博客的空文件夹中打开窗口   ，克隆你的fork的项目地址  
+`  git clone git@github.com:xxxx/xxxx.git
+        cd xxxxx
+        git remote add upstream git@github.com:xxxx/xxxxx.git
+        git remote -v
+        git diff
+`
+    6. 在下载好的文件夹下面运行：
+        `jekyll serve`
+            在浏览器中访问`localhost:4000`
+            你的博客就运行起来了
+    8. 写博客
+        所有的博客都放在了_posts文件夹下面，按照原本的命名规则命名即可。
+    9. 上传到git
+        `git add .
+        git commit -m "提交博客"
+        git push origin master`
+    10. 在浏览器中访问
+        在上传博客后可能需要等一会，然后访问：`xxxx.github.io`  // 就是放开是设置的项目名即可
+    
+    
+    
 
 ---
 
-配置的过程中也没遇到什么坑，基本就是 Git 的流程，相当顺手
 
-大的 Jekyll 主题上直接 fork 了 Clean Blog（这个主题也相当有名，就不多赘述了。唯一的缺点大概就是没有标签支持，于是我给它补上了。）
-
-本地调试环境需要 `gem install jekyll`，结果 rubygem 的源居然被墙了……后来手动改成了我大淘宝的镜像源才成功
-
-Theme 的 CSS 是基于 Bootstrap 定制的，看得不爽的地方直接在 Less 里改就好了（平时更习惯 SCSS 些），**不过其实我一直觉得 Bootstrap 在移动端的体验做得相当一般，比我在淘宝参与的团队 CSS 框架差多了……**所以为了体验，也补了不少 CSS 进去
-
-最后就进入了耗时反而最长的**做图、写字**阶段，也算是进入了**写博客**的正轨，因为是类似 Hack Day 的方式去搭这个站的，所以折腾折腾着大半夜就过去了。
-
-第二天考虑中文字体的渲染，fork 了 [Type is Beautiful](http://www.typeisbeautiful.com/) 的 `font` CSS，调整了字号，适配了 Win 的渣渲染，中英文混排效果好多了。
-
-
-## 后记
-
-回顾这个博客的诞生，纯粹是出于个人兴趣。在知乎相关问题上回答并获得一定的 star 后，我决定把这个博客主题当作一个小小的开源项目来维护。
-
-在经历 v1.0 - v1.5 的蜕变后，这个博客主题愈发完整，不但增加了诸多 UI 层的优化（opinionated）；在代码层面，更加丰富的配置项也使得这个主题拥有了更好的灵活性与可拓展性。而作为一个开源项目，我也积极的为其完善文档与解决 issue。
-
-如果你恰好逛到了这里，希望你也能喜欢这个博客主题。
-
-—— Hux 后记于 2015.10
 
 
