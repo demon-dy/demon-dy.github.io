@@ -1,30 +1,34 @@
 ---
 layout:     post
-title:      "vue快速上手"
-subtitle:   " \"Hello World, Hello Blog\""
-date:       2019-02-14 12:00:00
+title:      "Git快速入门，以及常用语句"
+subtitle:   " \"Git Quick Start, and Common Statements\""
+date:       2019-02-21 12:00:00
 author:     "idemon"
 header-img: "img/post-bg-alibaba.jpg"
 catalog: true
 tags:
+    - 版本控制器
+    - Git
     - 技术
-    - Vue
+    
 ---
 
-> “Yeah It's on. ”
-
-
-##一. Git是分布式版本控制系统，集中式和分布式版本控制系统有什么区别？
+## 一. Git是分布式版本控制系统，集中式和分布式版本控制系统有什么区别？
+   
    **集中式版本控制系统**：  版本库是集中放在中央服务器的，而开发过程是从中央服务器下载到本机在进行开发，如果想要更新代码，需要下载中央服务器最新的，在进行提交。局域网还好，如果是互联网下载会很慢。
    
    **分布式版本控制系统**：  没有中央服务器的概念，每台电脑都是完整的代码库，在更改的时候只需将更改的提交给对方就能看见了。
    
    **分布式版本控制的优点**：和集中式版本控制系统相比，分布式版本控制系统的安全性要高很多，因为每个人电脑里都有完整的版本库，某一个人的电脑坏掉了不要紧，随便从其他人那里复制一个就可以了。而集中式版本控制系统的中央服务器要是出了问题，所有人都没法干活了。
-##二. 安装
+   
+## 二. 安装
+   
    安装完成后，还需要最后一步设置，在命令行输入：  // 设置用户名和邮箱
    ```$ git config --global user.name "xxx"
     $ git config --global user.email "xxx@163.com"```
-##三.创建版本库
+    
+## 三.创建版本库
+	
 	打开git  Bash  应用程序
 	在适当的位置上创建一个空目录来充当版本库
 	$ mkdir learngit
@@ -41,7 +45,9 @@ tags:
 	提交之后再次修改文件，运行git status查看仓库当前的状态，再次添加（git add）修改的文件，并且提交（git commit）即可。
 	git status   //该命令可以查看仓库中哪些文件被修改了。
 	git diff      // 该命令是查看具体修改的部分  difference - 差异 
-##四. 版本回退
+	
+## 四. 版本回退
+	
 	在做版本回退的时候，可以使用git log 命令查看历史版本记录
 	git log  命令显示从最近到最远的提交日志    
 	git log --pretty=oneline 添加参数可以更直观的查看信息    显示结果为 版本id +备注信息
@@ -50,8 +56,8 @@ tags:
 	git reset --hard 版本id前几位 回滚到指定版本(commitId)
 	git reflog 该命令可以查看你所有历史版本id，即使回滚到之前了，还可以查看之前版本到当前版本之间的
 	Git暂存区的概念：暂存区是Git独有的（svn没有），用户在工作区编写文件之后使用git add命令添加会将工作区的文件暂时放到暂存区中，当用户使用git commit命令提交之后，会将暂存区中的文件添加到新的节点上
-		
-	git管理的是修改，而不是文件，当文件添加到暂存盘后再次修改，再提交，只会更新第一次添加的部分。
+	
+    git管理的是修改，而不是文件，当文件添加到暂存盘后再次修改，再提交，只会更新第一次添加的部分。
 	撤销文件的修改：
 		1）当修改了最新版本库中的文件，想取消修改时：
 			git checkout --filename  //可以将指定文件的修改部分撤销掉。  
@@ -62,7 +68,9 @@ tags:
 			git rm filename   使用git的删除后即可提交
 		2）失误删除
 			git checkout --filename  可以恢复该文件
-##五.远程仓库
+			
+## 五.远程仓库
+
 	根据自己的github账号，将本地的git库与远程产生关联。
 		1）创建SSH Key ,会在C盘用户中生成.ssh文件夹，里面id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人
 			$ ssh-keygen -t rsa -C "demonduyu@163.com"
@@ -77,7 +85,9 @@ tags:
 		
 		2）在本地git中运行命令
 			$ git clone git@github.com:michaelliao/gitskills.git
-##六.分支管理
+			
+## 六.分支管理
+
 	在git中主分支叫master,开始的时候只有一条分支，但是为了可以每天跟新代码，并且不破坏原有主程序的运行，会采用多分支的情况进行开发，子分支在没有和主分支合并的时候即使计较了也不会影响主分支。
 	
     具体实操：
@@ -135,7 +145,9 @@ tags:
 		c. 如果合并有冲突，则解决冲突，并在本地提交；
 		d. 没有冲突或者解决掉冲突后，再用git push origin <branch-name>推送就能成功！
 		如果git pull提示no tracking information，则说明本地分支和远程分支的链接关系没有创建，用命令git branch --set-upstream-to <branch-name> origin/<branch-name>
-##七.标签管理
+		
+## 七.标签管理
+
     标签的作用，给重要的版本提供简易的识别，例如 xxx .v01
     首先切换到需要打标签的分支：  git branch  (查看分支) git checkout <master> (切换分支)
     然后，敲命令git tag <name>就可以打一个新标签：
@@ -148,7 +160,9 @@ tags:
        $ git tag v0.9 f52c633
     查看标签信息：
        git show <tagname>
-##八.将网上克隆下载的项目再次提交
+       
+## 八.将网上克隆下载的项目再次提交
+
 ```git
 	git clone git@github.com:demon-dy/test.git	克隆
 	git remote add upstream git@github.com:demon-dy/test.git	
@@ -158,8 +172,9 @@ tags:
 	git commit -m "测试克隆项目再次提交"	提交到本地git
 	git push origin master	提交该项目master分支
 ```
-##九.git删除已经添加版本库但是还没有提交的不用文件
+
+## 九.git删除已经添加版本库但是还没有提交的不用文件
+
     进入该文件的目录下，执行
     $ git rm -r --cached .idea              # 删除.idea文件夹
     $ git commit -m '删除.idea'        # 提交,添加操作说明
-
