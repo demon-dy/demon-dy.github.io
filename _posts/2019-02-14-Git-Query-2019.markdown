@@ -4,7 +4,7 @@ title:      "Git快速入门，以及常用语句"
 subtitle:   " \"Git Quick Start, and Common Statements\""
 date:       2019-02-21 12:00:00
 author:     "idemon"
-header-img: "img/post-bg-alibaba.jpg"
+header-img: "img/post-bg-git.jpg"
 catalog: true
 tags:
     - 版本控制器
