@@ -9,13 +9,33 @@ catalog: true
 tags:
     - HTTP
     - 技术
-    
+
 ---
+## 前言
+	无论我们是处于项目开发阶段还是生产阶段，在依靠网络传输的环境下，难免会使用到http发送请求，对与发送请求的返回值你有没有想过是什么意思呢？对于有些大牛看http返回状态就是到是什么问题，并且更方便的区分出问题的是前端代码还是后端代码，这个状态也方便了开发者的调试。
+	
 ## 1xx: 信息
-| 消息 | 描述 |
-| ----- | -------
-100|Continue	服务器仅接收到部分请求，但是一旦服务器并没有拒绝该请求，客户端应该继续发送其余的请求。
-101|Switching Protocols	服务器转换协议：服务器将遵从客户的请求转换到另外一种协议。
+ <table width="420" border="0" cellpadding="0" cellspacing="0" style='width:252.00pt;border-collapse:collapse;table-layout:fixed;'>
+   <col width="80" style='width:48.00pt;'/>
+   <col width="340" style='mso-width-source:userset;mso-width-alt:9947;'/>
+   <tr height="28.25" style='height:16.95pt;'>
+    <td class="xl65" height="28.25" width="80" dir="LTR" style='height:16.95pt;width:48.00pt;' x:str>消息:</td>
+    <td class="xl65" width="340" dir="LTR" style='width:204.00pt;' x:str>描述:</td>
+   </tr>
+   <tr height="287.25" style='height:172.35pt;'>
+    <td class="xl66" height="287.25" dir="LTR" style='height:172.35pt;' x:str>100 Continue</td>
+    <td class="xl66" dir="LTR" x:str>服务器仅接收到部分请求，但是一旦服务器并没有拒绝该请求，客户端应该继续发送其余的请求。</td>
+   </tr>
+   <tr height="209.25" style='height:125.55pt;'>
+    <td class="xl67" height="209.25" dir="LTR" style='height:125.55pt;' x:str>101 Switching Protocols</td>
+    <td class="xl67" dir="LTR" x:str>服务器转换协议：服务器将遵从客户的请求转换到另外一种协议。</td>
+   </tr>
+   <![if supportMisalignedColumns]>
+    <tr width="0" style='display:none;'>
+     <td width="340" style='width:204;'></td>
+    </tr>
+   <![endif]>
+  </table>
 ## 2xx: 成功
 | 消息 | 描述 |
 | ----- | -------
